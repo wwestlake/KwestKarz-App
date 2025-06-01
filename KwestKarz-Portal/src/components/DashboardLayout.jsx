@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import useIdleLogout from "../hooks/useIdleLogout";
 
 const menuItems = [
   { label: "Task", path: "/task" },
@@ -11,6 +12,8 @@ const menuItems = [
 ];
 
 export default function DashboardLayout({ children }) {
+  useIdleLogout();
+
   return (
     <div className="flex min-h-screen bg-background text-text">
       <aside className="w-64 bg-primary p-4">
